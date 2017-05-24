@@ -51,6 +51,12 @@ def disabled_centos_repo(repo):
     os.system(cmd)
 
 
+def enabled_centos_repo(repo):
+    cmd = 'sed -i "s/enabled=0/enabled=1/g" ' + repo
+    print cmd
+    os.system(cmd)
+
+
 def generate_local_yum():
     yum_path = "/etc/yum.repos.d/yum_local.repo"
     config_str = "[local-os]\n"
